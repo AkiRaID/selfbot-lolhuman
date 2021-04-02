@@ -75,7 +75,7 @@ Scan Qrnya,dan Selamat Menikmati Bot Wanya😁
 
 
 ## Thanks to
-- [Roy](https://github.com/Pxc7b)
-- [Riu](https://github.com/Pxc7)
-- [MhankBarBar](https://github.com/MhankBarBar)
-- [LolHuman](https://github.com/LoL-Human)
+* [Roy](https://github.com/Pxc7b)
+* [Riu](https://github.com/Pxc7)
+* [MhankBarBar](https://github.com/MhankBarBar)
+* [LolHuman](https://github.com/LoL-Human)
