@@ -8,7 +8,7 @@
 <a href="https://github.com/AkiRaID"><img title="Author" src="https://img.shields.io/badge/AUTHOR-AKIRA-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://www.codefactor.io/repository/github/AkiRaID/selfbot-lolhuman/overview/master"><img title="Rating" src="https://www.codefactor.io/repository/github/AkiRaID/selfbot-lolhuman/badge/master"></a>
+title="🌟Rating" src="https://www.codefactor.io/repository/github/AkiRaID/selfbot-lolhuman/badge/master"></a>
 </p>
 <p align="center">
 <a href="https://github.com/AkiRaID/followers"><img title="Followers" src="https://img.shields.io/github/followers/AkiRa?color=blue&style=flat-square"></a>
@@ -19,13 +19,13 @@
 </p>
 <div align="center">
 <details>
- <summary> Help me!</summary>
+ <summary>😔 Help me!</summary>
  
  [Saweria](https://saweria.co/akirayt)
  
 </details>
 
-ini semua gratis, jangan pelit  ya :D
+ini semua gratis, jangan pelit ya :D
 <p align="center"><a href="https://www.akirainfo.site" target="_blank">Akira Rest Api</a>.</p>
 <p align="center"><a href="https://wa.me/6282158549899" target="_blank">Chat me on Whatsapp</a>.</p>
 </div>
@@ -61,7 +61,7 @@ Run the Whatsapp bot
 > node index.js
 ```
 
-Scan Qrnya,dan Selamat Menikmati Bot Wanya
+Scan Qrnya,dan Selamat Menikmati Bot Wanya😁
 
 
 ## Thanks to
