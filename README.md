@@ -40,6 +40,14 @@
 </p>
 
 
+## Tools
+Alat yg diperlukan
+
+```bash
+whatsapp
+termux
+2 Handphone
+```
 
 
 ## Getting Started
