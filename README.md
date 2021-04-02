@@ -39,8 +39,6 @@
 <a href="https://wa.me/6282158549899" target="_blank"><img src="https://img.shields.io/badge/Whatsapp-%808080.svg?&style=flat-square&logo=Whatsapp&logoColor=white" alt="Whatsapp"></a>
 
 </p>
-
-
 ## Tools
 Alat yg diperlukan
 
