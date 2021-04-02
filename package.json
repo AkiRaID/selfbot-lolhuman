@@ -1,0 +1,41 @@
+{
+    "name": "bot-wa",
+    "version": "0.0.1",
+    "description": "LoL Human case rest api",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [
+        "whatsapp",
+        "bot"
+    ],
+    "license": "ISC",
+    "dependencies": {
+        "@adiwajshing/baileys": "^3.5.0",
+        "async": "^3.2.0",
+        "axios": "^0.21.1",
+        "cfonts": "^2.9.0",
+        "cwebp": "^2.0.5",
+        "escape-string-regexp": "^4.0.0",
+        "fake-useragent": "^1.0.1",
+        "ffmpeg": "0.0.4",
+        "file-type": "^16.2.0",
+        "fluent-ffmpeg": "^2.1.2",
+        "form-data": "^4.0.0",
+        "fs-extra": "^9.0.1",
+        "moment-timezone": "^0.5.32",
+        "multistream": "^4.0.1",
+        "needle": "^2.5.2",
+        "node-fetch": "^2.6.1",
+        "performance-now": "^2.1.0",
+        "request": "^2.88.2",
+        "sender": "0.0.1",
+        "spinnies": "^0.5.1",
+        "ytdl": "^1.4.1"
+    },
+    "devDependencies": {}
+}
