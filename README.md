@@ -8,6 +8,13 @@
 <a href="https://github.com/AkiRaID"><img title="Author" src="https://img.shields.io/badge/AUTHOR-AKIRA-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
+    <img
+        src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white" />
+    <img
+        src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
+</p>
+
+<p align="center">
 <a href="https://github.com/AkiRaID/followers"><img title="Followers" src="https://img.shields.io/github/followers/AkiRa?color=blue&style=flat-square"></a>
 <a href="https://github.com/AkiRaID/selfbot-lolhuman/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/AkiRa/selfbot-lolhuman?color=red&style=flat-square"></a>
 <a href="https://github.com/AkiRaID/selfbot-lolhuman/network/members"><img title="Forks" src="https://img.shields.io/github/forks/AkiRa/selfbot-lolhuman?color=red&style=flat-square"></a>
