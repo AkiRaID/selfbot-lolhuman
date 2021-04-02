@@ -8,9 +8,6 @@
 <a href="https://github.com/AkiRaID"><img title="Author" src="https://img.shields.io/badge/AUTHOR-AKIRA-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-title="🌟Rating" src="https://www.codefactor.io/repository/github/AkiRaID/selfbot-lolhuman/badge/master"></a>
-</p>
-<p align="center">
 <a href="https://github.com/AkiRaID/followers"><img title="Followers" src="https://img.shields.io/github/followers/AkiRa?color=blue&style=flat-square"></a>
 <a href="https://github.com/AkiRaID/selfbot-lolhuman/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/AkiRa/selfbot-lolhuman?color=red&style=flat-square"></a>
 <a href="https://github.com/AkiRaID/selfbot-lolhuman/network/members"><img title="Forks" src="https://img.shields.io/github/forks/AkiRa/selfbot-lolhuman?color=red&style=flat-square"></a>
@@ -32,7 +29,7 @@ ini semua gratis, jangan pelit ya :D
 
 ## Getting Started
 
-This project require NodeJS v12.
+This project require NodeJS v12
 
 ### Install
 Clone this project
