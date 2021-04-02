@@ -29,10 +29,16 @@
  
 </details>
 
-ini semua gratis, jangan pelit ya :D
-<p align="center"><a href="https://www.akirainfo.site" target="_blank">Akira Rest Api</a>.</p>
-<p align="center"><a href="https://wa.me/6282158549899" target="_blank">Chat me on Whatsapp</a>.</p>
-</div>
+<p align="center">
+📫 Follow Me On
+</p>
+
+<p align="center">
+<a href="https://www.instagram.com/akirashopreal" target="_blank"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?&style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
+<a href="https://m.youtube.com/channel/UCvVd-kAsrJUjg0bwKqxUPeg" target="_blank"><img src="https://img.shields.io/badge/YouTube-%231877F2.svg?&style=flat-square&logo=YouTube&logoColor=white" alt="YouTube"></a>
+<a href="https://wa.me/6282158549899" target="_blank"><img src="https://img.shields.io/badge/Whatsapp-%808080.svg?&style=flat-square&logo=Whatsapp&logoColor=white" alt="Whatsapp"></a>
+</p>
+
 
 ## Getting Started
 
