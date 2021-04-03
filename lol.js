@@ -36,7 +36,7 @@ const vcard = 'BEGIN:VCARD\n'  // Jan diubah,Ntar Error
             + 'TEL;type=CELL;type=VOICE;waid=6282158549899:+6282158549899\n'  // Ganti jadi nomormu, tapi jangan ubah polanya
             + 'END:VCARD' // Jan diubah,Ntar Error
 //Setingan
-apikey = 'Beli Sendiri di api.lolhuman.xyz' 
+apikey = 'AkiraYT' 
 prefix = 'x' 
 owner = '6282158549899' 
 cr = 'Selfbot Lol-Human By Akira'
@@ -468,7 +468,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					break 
 		case 'toimg2':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if ((isMedia && !lol.message.videoMessage || isQuotedSticker) && args.length == 0) { 
                         const encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
                         filePath = await lolteam.downloadAndSaveMediaMessage(encmedia)
@@ -556,7 +556,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'alquranaudio':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} 18 or ${prefix + command} 18/10`)
                     surah = args[0]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/quran/audio/${surah}?apikey=${apikey}`)
@@ -575,7 +575,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'kisahnabi':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Muhammad`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/kisahnabi/${query}?apikey=${apikey}`)
@@ -589,7 +589,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'jadwalsholat':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Yogyakarta`)
                     daerah = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/sholat/${daerah}?apikey=${apikey}`)
@@ -611,7 +611,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     // Downloader //
                 case 'ytplay':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/ytplay?apikey=${apikey}&query=${query}`)
@@ -672,7 +672,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'ytmp3':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://www.youtube.com/watch?v=qZIQAk-BUEc`)
                     ini_link = args[0]
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/ytaudio?apikey=${apikey}&url=${ini_link}`)
@@ -703,7 +703,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'ytmp4':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://www.youtube.com/watch?v=qZIQAk-BUEc`)
                     ini_link = args[0]
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/ytvideo?apikey=${apikey}&url=${ini_link}`)
@@ -734,7 +734,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'telesticker':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://t.me/addstickers/LINE_Menhera_chan_ENG`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/telestick?apikey=${apikey}&url=${ini_url}`)
@@ -766,7 +766,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'tiktoknowm':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_url = args[0]
                     ini_url = `http://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=${ini_url}`
@@ -776,7 +776,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'tiktokmusic':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_link = args[0]
                     get_audio = await getBuffer(`http://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
@@ -784,7 +784,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'spotify':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
                     url = args[0]
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/spotify?apikey=${apikey}&url=${url}`)
@@ -817,7 +817,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'jooxplay':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/jooxplay?apikey=${apikey}&query=${query}`)
@@ -835,7 +835,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'igdl':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://www.instagram.com/p/CJ8XKFmJ4al/?igshid=1acpcqo44kgkn`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/instagram?apikey=${apikey}&url=${ini_url}`)
@@ -847,7 +847,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'fbdl':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://id-id.facebook.com/SamsungGulf/videos/video-bokeh/561108457758458/`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/facebook?apikey=${apikey}&url=${ini_url}`)
@@ -857,7 +857,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'zippyshare':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://www51.zippyshare.com/v/5W0TOBz1/file.html`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/zippyshare?apikey=${apikey}&url=${ini_url}`)
@@ -879,7 +879,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'pinterestdl':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://id.pinterest.com/pin/696580267364426905/`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/pinterestdl?apikey=${apikey}&url=${ini_url}`)
@@ -896,7 +896,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'pixivdl':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} 63456028`)
                     query = args[0]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/pixivdl/${pixivid}?apikey=${apikey}`)
@@ -959,7 +959,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'xnxx':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/xnxx?apikey=${apikey}&url=${query}`)
@@ -985,7 +985,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     // AniManga //
                 case 'character':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Miku Nakano`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/character?apikey=${apikey}&query=${query}`)
@@ -1005,7 +1005,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'manga':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/manga?apikey=${apikey}&query=${query}`)
@@ -1036,7 +1036,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'anime':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/anime?apikey=${apikey}&query=${query}`)
@@ -1069,7 +1069,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'wait':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
                         const filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
@@ -1226,7 +1226,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'nhentai':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} 12345`)
                     henid = args[0]
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${apikey}`)
@@ -1248,7 +1248,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'nhentaipdf':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} 12345`)
                     henid = args[0]
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${apikey}`)
@@ -1314,7 +1314,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     // Information //
                 case 'heroml':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Fanny`)
                     hero = args[0]
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/heroml/${hero}?apikey=${apikey}`)
@@ -1451,7 +1451,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'infogempa':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/infogempa?apikey=${apikey}`)
                     get_result = get_result.result
                     ini_txt = `Lokasi : ${get_result.lokasi}\n`
@@ -1560,7 +1560,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'nsfwcheck':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
                         const filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
@@ -1691,7 +1691,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'quotesanime':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     quotes = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesnime?apikey=${apikey}`)
                     quotes = quotes.result
                     quote = quotes.quote
@@ -1752,7 +1752,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'wallpapersearch':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} loli`)
                     query = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/wallpaper?apikey=${apikey}&query=${query}`)
@@ -1760,7 +1760,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'wallpapersearch2':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} loli`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/wallpaper2?apikey=${apikey}&query=${query}`)
@@ -1796,7 +1796,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                   break
                 case 'google':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} loli`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/gsearch?apikey=${apikey}&query=${query}`)
@@ -1811,7 +1811,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'stickerwa':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} Koceng Imot`)
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/stickerwa?apikey=${apikey}&query=${query}`)
@@ -1891,7 +1891,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     // Creator
                 case 'stickerwm':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage)) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
                         filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
@@ -1999,29 +1999,29 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                     case 'attp':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
-                    if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} MrA43G`)
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
+                    if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} Akira`)
                     teks = args.join(" ")
-                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/attp?apikey=SoftApikey&text=${teks}`)
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/attp?apikey=AkiraYT&text=${teks}`)
                     lolteam.sendMessage(from, buffer, sticker, { quoted: lol})
                     break
                     case 'qrcode':
 		if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} loli`)
                     query = args.join(" ")
-                    ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/qrcode?apikey=SoftApikey&text=${query}`)
+                    ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/qrcode?apikey=AkiraYT&text=${query}`)
                     lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                     case 'nulis':
 		if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} LoL Human`)
                     teks = args.join(" ")
-                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/nulis?apikey=SoftApikey&text=${teks}`)
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/nulis?apikey=AkiraYT&text=${teks}`)
                     lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
                     case 'apikeycek':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
 		apiKey = args[0]
                     get_result = await fetchJson(`http://lolteam.herokuapp.com/api/checkapikey?apikey=${apiKey}`)
                     get_result = get_result.result
@@ -2034,26 +2034,26 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                     case 'ytkomen':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} LoL Human api.lolhuman.xyz`)
 		username = args[0]
 		comment = args[2]
-                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/ytcomment?apikey=SoftApikey&username=${username}&comment=${comment}&img=https://i.ibb.co/JdfQ73m/photo-2021-02-05-10-13-39.jpg`)
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/ytcomment?apikey=AkiraYT&username=${username}&comment=${comment}&img=https://i.ibb.co/JdfQ73m/photo-2021-02-05-10-13-39.jpg`)
                     lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
                     case 'phkomen':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} LoL Human api.lolhuman.xyz`)
 		username = args[0]
 		comment = args[2]
-                    buffer = await getBuffer(`http://api.lolhuman.xyz/api/phcomment?apikey=SoftApikey&img=https://i.ibb.co/JdfQ73m/photo-2021-02-05-10-13-39.jpg&text=${comment}&username=${username}`)
+                    buffer = await getBuffer(`http://api.lolhuman.xyz/api/phcomment?apikey=AkiraYT&img=https://i.ibb.co/JdfQ73m/photo-2021-02-05-10-13-39.jpg&text=${comment}&username=${username}`)
                     lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
                     case 'amongus':
 		if (!isRegistered) return reply(ind.noregis())
-                    if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} MrA43G`)
-                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/amongus?apikey=SoftApikey&text=${body.slice(9)}`)
+                    if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} Akira`)
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/amongus?apikey=AkiraYT&text=${body.slice(9)}`)
                     lolteam.sendMessage(from, buffer, sticker, { quoted: lol})
                     break
                     case 'tolol': 
@@ -2067,7 +2067,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 				if (!isRegistered) return reply(ind.noregis())
 				if (args.length < 1) return reply('Contoh: 😭')
 				gatauda = body.slice(6)
-				buffer = await getBuffer(`http://api.lolhuman.xyz/api/smoji/${gatauda}?apikey=SoftApikey`, {method: 'get'})
+				buffer = await getBuffer(`http://api.lolhuman.xyz/api/smoji/${gatauda}?apikey=AkiraYT`, {method: 'get'})
 				lolteam.sendMessage(from, buffer, image, {quoted: lol})
 				break
 				case 'quotemaker':
@@ -2083,7 +2083,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
 				case 'ktpmaker':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Usage: ${prefix + command} nik|provinsi|kabupaten|nama|tempat, tanggal lahir|jenis kelamin|jalan|rt/rw|kelurahan|kecamatan|agama|status nikah|pekerjaan|warga negara|berlaku sampai|url_image\n\nExample: ${prefix + command} 456127893132123|bumipertiwi|fatamorgana|LoL Human|mars, 99-99-9999|belum ditemukan|jl wardoyo|999/999|turese|imtuni|alhamdulillah islam|jomblo kack|mikirin dia|indo ori no kw|hari kiamat|https://i.ibb.co/Xb2pZ88/test.jpg`)
                     get_args = args.join(" ").split("|")
                     nik = get_args[0]
@@ -2108,7 +2108,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 
                 case 'spamsms':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     if (args.length == 0) return reply(`Example: ${prefix + command} 08303030303030`)
                     nomor = args[0]
                     await fetchJson(`http://api.lolhuman.xyz/api/sms/spam1?apikey=${apikey}&nomor=${nomor}`)
@@ -2160,7 +2160,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'animebellybutton':
                 case 'hentai4everyone':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${apikey}`)
                     lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
@@ -2207,7 +2207,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'kemonomimi':
                 case 'nsfw_avatar':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${apikey}`)
                     lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
@@ -2215,7 +2215,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'nsfw_neko_gif':
                 case 'random_hentai_gif':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     ranp = getRandom('.gif')
                     rano = getRandom('.webp')
                     ini_buffer = `http://api.lolhuman.xyz/api/random2/${command}?apikey=${apikey}`
@@ -2277,7 +2277,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'steel3d':
                 case 'wallgravity':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                 cf = `${body.slice(8)}`
                     txt1 = cf.split("/")[0];
                     txt2 = cf.split("/")[1];
@@ -2324,7 +2324,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'battlefield4':
                 case 'pubg':
 		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+		if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                 cf = `${body.slice(8)}`
                     txt1 = cf.split("/")[0];
                     txt2 = cf.split("/")[1];
@@ -2527,7 +2527,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					break 
 					case 'asupan':
 			if (!isRegistered) return reply(ind.noregis())
-			if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
+			if (!isPrem) return reply('KAMU BUKAN USER PREMIUM,JIKA INGIN UPGRADE KETIK XOWNER')
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/asupan?apikey=${apikey}`)
                     buffer = await getBuffer(get_result.result)
                     lolteam.sendMessage(from, buffer, video, { quoted: lol, mimetype: Mimetype.mp4, filename: "asupan.mp4" })
