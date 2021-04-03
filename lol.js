@@ -429,7 +429,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 lolteam.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: lol})
                 lolteam.sendMessage(from, 'Tuh kontak Akira <•_•> ,Jangan Diubah Ya Kontaknya (*>*)',MessageType.text, { quoted: lol} )
 	        ini_buffer = await getBuffer("https://i.ibb.co/TBYdPv7/20210402-204108.jpg")
-                lolteam.sendMessage(from, ini_buffer, MessageType.image, {quoted: lol, caption: '*SUBSCRIBE:*\n*https://youtube.com/channel/UC85BV5PuFNdhEF1JIR6mKjw*'})
+                lolteam.sendMessage(from, ini_buffer, MessageType.image, {quoted: lol, caption: '*SUBSCRIBE:*\n*https://m.youtube.com/channel/UCvVd-kAsrJUjg0bwKqxUPeg*'})
                  break
 				case 'addprem':
 				if (!isRegistered) return reply(ind.noregis())
