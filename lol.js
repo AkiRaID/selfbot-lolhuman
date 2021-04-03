@@ -68,20 +68,20 @@ checkRegisteredUser
 
 async function starts() {
     const lolteam = new WAConnection()
-    lolhuman.logger.level = 'warn'
-    lolhuman.on('qr', () => {
+    lolteam.logger.level = 'warn'
+    lolteam.on('qr', () => {
         const time_connecting = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-        console.log(color(time_connecting, "white"), color("[  STATS  ]", "aqua"), "Scan QR Code with WhatsApp")
-    })
-    fs.existsSync('./lolhuman.json') && lolhuman.loadAuthInfo('./lolhuman.json')
+        console.log(color('[','aqua'),color('AkiRa','white'),color(']','aqua'),color('SQAN QR CODE DI WHATSAPP WEB!!','aqua'),color('You','white'),color('Tube','red'),color('AkiRa','yellow'))
+})
+    fs.existsSync('./lolteam.json') && lolteam.loadAuthInfo('./lolteam.json')
     if (apikey == "") {
         ini_time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-        console.log(color(ini_time, "white"), color("[  ERROR  ]", "aqua"), color("Apikey is empty, please check at script.js", 'red'))
+        console.log(color(ini_time, "white"), color("[  ERROR  ]", "aqua"), color("Apikey is empty, please check at lol.js", 'red'))
         exit()
     }
     if (prefix == "") {
         ini_time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-        console.log(color(ini_time, "white"), color("[  ERROR  ]", "aqua"), color("Prefix is empty, please check at script.js", 'red'))
+        console.log(color(ini_time, "white"), color("[  ERROR  ]", "aqua"), color("Prefix is empty, please check at lol.js", 'red'))
         exit()
     }
    if (cr == "") {
@@ -94,26 +94,26 @@ async function starts() {
         console.log(color(ini_time, "white"), color("[  ERROR  ]", "aqua"), color("Owner is empty, please check at script.js", 'red'))
         exit()
     }
-    lolhuman.on('connecting', () => {
+    lolteam.on('connecting', () => {
         const time_connecting = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-        console.log(color(time_connecting, "white"), color("[  STATS  ]", "aqua"), "Connecting...")
+        console.log(color(time_connecting, "white"), color("[  STATUS  ]", "aqua"), "Harap Sabar....")
     })
-    lolhuman.on('open', () => {
+    lolteam.on('open', () => {
         const time_connect = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-        console.log(color(time_connect, "white"), color("[  STATS  ]", "aqua"), "Connected")
+        console.log(color(time_connect, "white"), color("[  STATUS  ]", "aqua"), "Subscribe My Channel AkiRa")
     })
-    await lolhuman.connect({ timeoutMs: 30 * 1000 })
-    fs.writeFileSync('./lolhuman.json', JSON.stringify(lolhuman.base64EncodedAuthInfo(), null, '\t'))
+    await lolteam.connect({ timeoutMs: 30 * 1000 })
+    fs.writeFileSync('./lolteam.json', JSON.stringify(lolteam.base64EncodedAuthInfo(), null, '\t'))
 
-	lolhuman.on('group-participants-update', async (anu) => {
+	lolteam.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
 		try {
-			const mdata = await lolhuman.groupMetadata(anu.jid)
+			const mdata = await lolteam.groupMetadata(anu.jid)
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
 				try {
-					ppimg = await lolhuman.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+					ppimg = await lolteam.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
@@ -133,11 +133,11 @@ async function starts() {
 ┠⊷️ *ᴀꜱᴀʟ ᴋᴏᴛᴀ* :
 ┗━━━━━━━━━━━━━━━`
 				let buff = await getBuffer(ppimg)
-				lolhuman.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				lolteam.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
 				try {
-					ppimg = await lolhuman.getProfilePicture(`${num.split('@')[0]}@c.us`)
+					ppimg = await lolteam.getProfilePicture(`${num.split('@')[0]}@c.us`)
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
@@ -146,14 +146,14 @@ sᴇʟᴀᴍᴀᴛ ᴛɪɴɢɢᴀʟ
 @${num.split('@')[0]}👋🍻
 sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ sᴇʟᴀʟᴜ ᴅɪᴋᴇɴᴀɴɢ ᴏʟᴇʜ ᴏʀᴀɴɢ ʏɢ ʙᴇʀᴀᴅᴀ ᴅɪsɪɴɪ🚮`
 				let buff = await getBuffer(ppimg)
-				lolhuman.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				lolteam.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})
 
-    lolhuman.on('chat-update', async(lol) => {
+    lolteam.on('chat-update', async(lol) => {
         try {
             const time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             if (!lol.hasNewMessage) return
@@ -168,7 +168,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
             const type = Object.keys(lol.message)[0]
             const insom = from.endsWith('@g.us')
             const nameReq = insom ? lol.participant : lol.key.remoteJid
-            pushname2 = lolhuman.contacts[nameReq] != undefined ? lolhuman.contacts[nameReq].vname || lolhuman.contacts[nameReq].notify : undefined
+            pushname2 = lolteam.contacts[nameReq] != undefined ? lolteam.contacts[nameReq].vname || lolteam.contacts[nameReq].notify : undefined
 
             const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 
@@ -177,38 +177,38 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
             var Link = (type === 'conversation' && lol.message.conversation) ? lol.message.conversation : (type == 'imageMessage') && lol.message.imageMessage.caption ? lol.message.imageMessage.caption : (type == 'videoMessage') && lol.message.videoMessage.caption ? lol.message.videoMessage.caption : (type == 'extendedTextMessage') && lol.message.extendedTextMessage.text ? lol.message.extendedTextMessage.text : ''
             const messagesLink = Link.slice(0).trim().split(/ +/).shift().toLowerCase()
 	    const isGroup = from.endsWith('@g.us')
-	    const groupMetadata = isGroup ? await lolhuman.groupMetadata(from) : ''
+	    const groupMetadata = isGroup ? await lolteam.groupMetadata(from) : ''
 	    const groupMembers = isGroup ? groupMetadata.participants : ''
 	    const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
             const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
             const args = body.trim().split(/ +/).slice(1)
 	    const q = args.join(' ')
             const isCmd = body.startsWith(prefix)
-            lolhuman.chatRead(from)
+            lolteam.chatRead(from)
 
-            const botNumber = lolhuman.user.jid
+            const botNumber = lolteam.user.jid
 	    const sender = isGroup ? lol.participant : lol.key.remoteJid
 	    const isOwner = ownerNumber.includes(sender)
 	    const isRegistered = checkRegisteredUser(sender)
 	    const isGroupAdmins = groupAdmins.includes(sender) || false
 	    const isPrem = premium.includes(sender)
             const groupName = isGroup ? groupMetadata.subject : ''
-            const totalchat = await lolhuman.chats.all()
+            const totalchat = await lolteam.chats.all()
 
             const isUrl = (ini_url) => {
                 return ini_url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
             }
             const reply = (teks) => {
-                lolhuman.sendMessage(from, teks, text, { quoted: lol})
+                lolteam.sendMessage(from, teks, text, { quoted: lol})
             }
             const sendMess = (hehe, teks) => {
-                lolhuman.sendMessage(hehe, teks, text)
+                lolteam.sendMessage(hehe, teks, text)
             }
             const costum = (pesan, tipe, target, target2) => {
-                lolhuman.sendMessage(from, pesan, tipe, { quoted: { key: { fromMe: false, participant: `${target}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target2}` } } })
+                lolteam.sendMessage(from, pesan, tipe, { quoted: { key: { fromMe: false, participant: `${target}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target2}` } } })
             }
             const mentions = (teks, memberr, id) => {
-                (id == null || id == undefined || id == false) ? lolhuman.sendMessage(from, teks.trim(), extendedText, { contextInfo: { "mentionedJid": memberr } }): lolhuman.sendMessage(from, teks.trim(), extendedText, { quoted: lol, contextInfo: { "mentionedJid": memberr } })
+                (id == null || id == undefined || id == false) ? lolteam.sendMessage(from, teks.trim(), extendedText, { contextInfo: { "mentionedJid": memberr } }): lolteam.sendMessage(from, teks.trim(), extendedText, { quoted: lol, contextInfo: { "mentionedJid": memberr } })
             }
             async function faketoko(teks, url_image, title, code, price) {
                 var punya_wa = "0@s.whatsapp.net"
@@ -233,7 +233,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         }
                     }
                 }
-                lolhuman.sendMessage(from, teks, text, ini_cstoko)
+                lolteam.sendMessage(from, teks, text, ini_cstoko)
             }
 
 		var premi = '*GRATISAN*'
@@ -290,7 +290,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                             }
                         }
                     }
-                    lolhuman.sendMessage(from, help(prefix, pushname2,  premi, uptime, tanggal, akiratod), text, ini_csreply)
+                    lolteam.sendMessage(from, help(prefix, pushname2,  premi, uptime, tanggal, akiratod), text, ini_csreply)
                     break
 		//DAFTAR
 		case 'daftar':
@@ -307,11 +307,11 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 veri = sender
                 if (isGroup) {
                     addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
-                    await lolhuman.sendMessage(from, pp_user, image, {quoted: lol, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    await lolteam.sendMessage(from, pp_user, image, {quoted: lol, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
                     console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
                 } else {
                     addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
-                    await lolhuman.sendMessage(from, pp_user, image, {quoted: lol, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
+                    await lolteam.sendMessage(from, pp_user, image, {quoted: lol, caption: ind.registered(namaUser, umurUser, serialUser, time, sender)})
                     console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
                 }
 		break
@@ -321,14 +321,14 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 const trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
 		const ttrth = trut[Math.floor(Math.random() * trut.length)]
 		truteh = await getBuffer(`https://i.ibb.co/tzPwWDH/20210402-203555.jpg`)
-		lolhuman.sendMessage(from, truteh, image, { caption: '*TRUTH*\n\n'+ ttrth, quoted: lol })
+		lolteam.sendMessage(from, truteh, image, { caption: '*TRUTH*\n\n'+ ttrth, quoted: lol })
 		break
 		case 'dare':
 		if (!isRegistered) return reply(ind.noregis())
 		const dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "🦄??" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
 		const der = dare[Math.floor(Math.random() * dare.length)]
 		tod = await getBuffer(`https://i.ibb.co/SVbfCZY/20210402-203727.jpg`)
-		lolhuman.sendMessage(from, tod, image, { quoted: lol, caption: '*DARE*\n\n'+ der })
+		lolteam.sendMessage(from, tod, image, { quoted: lol, caption: '*DARE*\n\n'+ der })
 		break
 		case 'elang':
 		if (!isRegistered) return reply(ind.noregis())
@@ -336,7 +336,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/pinterest?apikey=${apikey}&query=elang`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
          case 'buwungpuyuh':
 		if (!isRegistered) return reply(ind.noregis())
@@ -344,7 +344,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/pinterest?apikey=${apikey}&query=burungpuyuh`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                    case 'buaya':
 		if (!isRegistered) return reply(ind.noregis())
@@ -352,13 +352,13 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/pinterest?apikey=${apikey}&query=buaya`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break 
 		//Premium
 		case 'premlist':
 		case 'listprem':
 				if (!isRegistered) return reply(ind.noregis())
-					lolhuman.updatePresence(from, Presence.composing) 
+					lolteam.updatePresence(from, Presence.composing) 
 					teks = `╭─「 *JUMLAH USER PREMIUM* 」\n`
 					no = 0
 					for (let prem of premium) {
@@ -366,12 +366,12 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 						teks += `│「${no.toString()}」 @${prem.split('@')[0]}\n`
 					}
 					teks += `│ Jumlah User Premium : ${premium.length}\n╰──────「 *LoL-Api* 」`
-					lolhuman.sendMessage(from, teks.trim(), extendedText, {quoted: lol, contextInfo: {"mentionedJid": premium}})
+					lolteam.sendMessage(from, teks.trim(), extendedText, {quoted: lol, contextInfo: {"mentionedJid": premium}})
 					break
 					case 'listpenyimak': 
         		let ido = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : from
-			    let online = [...Object.keys(lolhuman.chats.get(ido).presences), lolhuman.user.jid]
-			    lolhuman.sendMessage(from, '*CIE NYIMAK AJE LU*\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join`\n` + `\n*©POWERED BY RIU*`, text, { quoted: lol,
+			    let online = [...Object.keys(lolteam.chats.get(ido).presences), lolteam.user.jid]
+			    lolteam.sendMessage(from, '*CIE NYIMAK AJE LU*\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join`\n` + `\n*©POWERED BY RIU*`, text, { quoted: lol,
   			  contextInfo: { mentionedJid: online }
 			    })
 				break 
@@ -382,16 +382,16 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 			if (!isGroup) return reply('KHUSUS GROUP')
                        if (!isGroupAdmins) return reply('KHUSUS ADMIN')
                        if (sender.split("@")[0] != owner) return reply("Command only for owner bot")
-					lolhuman.deleteMessage(from, { id: lol.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
+					lolteam.deleteMessage(from, { id: lol.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
 		case 'leave':
 			if (sender.split("@")[0] != owner) return reply("Command only for owner bot")
                       setTimeout( () => {
-                      lolhuman.groupLeave (from) 
+                      lolteam.groupLeave (from) 
                       }, 2000)
                       setTimeout( () => {
-                      lolhuman.updatePresence(from, Presence.composing) 
-                      lolhuman.sendMessage(from, 'SaYoNaRa:/', text)
+                      lolteam.updatePresence(from, Presence.composing) 
+                      lolteam.sendMessage(from, 'SaYoNaRa:/', text)
                       }, 0)
                       break			
 		case 'takestick':
@@ -399,7 +399,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if ((isMedia && !lol.message.videoMessage || isQuotedSticker)) {
                         if (args.length == 0) return reply(`Example: ${prefix + command} LoL|Human`)
                         const encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        filePath = await lolhuman.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
+                        filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
                         file_name = getRandom(".webp")
                         ini_txt = args.join(" ").split("|")
                         request({
@@ -415,7 +415,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                             fs.unlinkSync(filePath)
                             fs.writeFileSync(file_name, body, "binary")
                             ini_buff = fs.readFileSync(file_name)
-                            lolhuman.sendMessage(from, ini_buff, sticker, { quoted: lol })
+                            lolteam.sendMessage(from, ini_buff, sticker, { quoted: lol })
                             fs.unlinkSync(file_name)
                         });
                     } else {
@@ -426,10 +426,10 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
             case 'owner':
             case 'creator':
 		if (!isRegistered) return reply(ind.noregis())
-                lolhuman.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: lol})
-                lolhuman.sendMessage(from, 'Tuh kontak Akira <•_•> ,Jangan Diubah Ya Kontaknya (*>*)',MessageType.text, { quoted: lol} )
+                lolteam.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: lol})
+                lolteam.sendMessage(from, 'Tuh kontak Akira <•_•> ,Jangan Diubah Ya Kontaknya (*>*)',MessageType.text, { quoted: lol} )
 	        ini_buffer = await getBuffer("https://i.ibb.co/TBYdPv7/20210402-204108.jpg")
-                lolhuman.sendMessage(from, ini_buffer, MessageType.image, {quoted: lol, caption: '*SUBSCRIBE:*\n*https://youtube.com/channel/UC85BV5PuFNdhEF1JIR6mKjw*'})
+                lolteam.sendMessage(from, ini_buffer, MessageType.image, {quoted: lol, caption: '*SUBSCRIBE:*\n*https://youtube.com/channel/UC85BV5PuFNdhEF1JIR6mKjw*'})
                  break
 				case 'addprem':
 				if (!isRegistered) return reply(ind.noregis())
@@ -471,10 +471,10 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     if ((isMedia && !lol.message.videoMessage || isQuotedSticker) && args.length == 0) { 
                         const encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        filePath = await lolhuman.downloadAndSaveMediaMessage(encmedia)
+                        filePath = await lolteam.downloadAndSaveMediaMessage(encmedia)
                         file_name = getRandom('.png')
                         request({
-                            url: `http://lolhuman.herokuapp.com/api/convert/topng?apikey=${apikey}`,
+                            url: `http://lolteam.herokuapp.com/api/convert/topng?apikey=${apikey}`,
                             method: 'POST',
                             formData: {
                                 "img": fs.createReadStream(filePath)
@@ -484,7 +484,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                             fs.unlinkSync(filePath)
                             fs.writeFileSync(file_name, body, "binary")
                             ini_buff = fs.readFileSync(file_name)
-                            lolhuman.sendMessage(from, ini_buff, image, { quoted: lol, caption: 'Ni Udh Jadi Boss' })
+                            lolteam.sendMessage(from, ini_buff, image, { quoted: lol, caption: 'Ni Udh Jadi Boss' })
                             fs.unlinkSync(file_name)
                         });
                     } else {
@@ -494,7 +494,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'broadcast':
 		if (!isRegistered) return reply(ind.noregis())
                     if (sender.split("@")[0] != owner) return reply("Command only for owner bot")
-                    list_chat = await lolhuman.chats.all()
+                    list_chat = await lolteam.chats.all()
                     ini_text = args.join(" ")
                     for (let chat of list_chat) {
                         sendMess(chat.jid, ini_text)
@@ -504,7 +504,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (!isRegistered) return reply(ind.noregis())
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage) && args.length == 0) {
                         var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        var filePath = await lolhuman.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
+                        var filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
                         var form = new FormData();
                         var stats = fs.statSync(filePath);
                         var fileSizeInBytes = stats.size;
@@ -560,7 +560,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} 18 or ${prefix + command} 18/10`)
                     surah = args[0]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/quran/audio/${surah}?apikey=${apikey}`)
-                    lolhuman.sendMessage(from, ini_buffer, audio, { quoted: lol, mimetype: Mimetype.mp4Audio })
+                    lolteam.sendMessage(from, ini_buffer, audio, { quoted: lol, mimetype: Mimetype.mp4Audio })
                     break
                 case 'asmaulhusna':
 		if (!isRegistered) return reply(ind.noregis())
@@ -625,9 +625,9 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Dislike : ${get_info.dislike}\n`
                     ini_txt += `Description :\n ${get_info.description}\n`
                     ini_buffer = await getBuffer(get_info.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     get_audio = await getBuffer(get_result.audio[3].link)
-                    lolhuman.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_info.title}.mp3`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_info.title}.mp3`, quoted: lol})
                     break
                 case 'ytplay2':
 		if (!isRegistered) return reply(ind.noregis())
@@ -636,23 +636,23 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/ytplay2?apikey=${apikey}&query=${query}`)
                     get_result = get_result.result
                     ini_buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: get_result.title })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: get_result.title })
                     get_audio = await getBuffer(get_result.audio)
-                    lolhuman.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, filename: `${get_result.title}.mp3`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, filename: `${get_result.title}.mp3`, quoted: lol})
                     get_video = await getBuffer(get_result.video)
-                    lolhuman.sendMessage(from, get_video, video, { mimetype: Mimetype.mp4, filename: `${get_result.title}.mp4`, quoted: lol})
+                    lolteam.sendMessage(from, get_video, video, { mimetype: Mimetype.mp4, filename: `${get_result.title}.mp4`, quoted: lol})
                     break
 		    case 'ytmp33':
 			if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://www.youtube.com/watch?v=qZIQAk-BUEc`)
                     ini_link = args[0]
-                    get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/ytaudio2?apikey=KatoNiBoss&url=${ini_link}`)
+                    get_result = await fetchJson(`http://lolteam.herokuapp.com/api/ytaudio2?apikey=KatoNiBoss&url=${ini_link}`)
                     get_result = get_result.result
                     txt = `Title : ${get_result.title}\n`
                     buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, buffer, image, { quoted: lol, caption: txt })
+                    lolteam.sendMessage(from, buffer, image, { quoted: lol, caption: txt })
 		    get_audio = await getBuffer(get_result.link[0].size)
-		    lolhuman.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol })
+		    lolteam.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol })
                     break
                 case 'ytsearch':
 			if (!isRegistered) return reply(ind.noregis())
@@ -685,9 +685,9 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Dislike : ${get_result.dislike}\n`
                     ini_txt += `Description :\n ${get_result.description}`
                     ini_buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     get_audio = await getBuffer(get_result.link[3].link)
-                    lolhuman.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol})
                     break
                 case 'ytmp32':
 		if (!isRegistered) return reply(ind.noregis())
@@ -697,9 +697,9 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     get_result = get_result.result
                     ini_txt = `${get_result.title} - ${get_result.size}`
                     ini_buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     get_audio = await getBuffer(get_result.link)
-                    lolhuman.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol})
                     break
                 case 'ytmp4':
 		if (!isRegistered) return reply(ind.noregis())
@@ -716,9 +716,9 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Dislike : ${get_result.dislike}\n`
                     ini_txt += `Description :\n ${get_result.description}`
                     ini_buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     get_audio = await getBuffer(get_result.link[0].link)
-                    lolhuman.sendMessage(from, get_audio, video, { mimetype: 'video/mp4', filename: `${get_result.title}.mp4`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, video, { mimetype: 'video/mp4', filename: `${get_result.title}.mp4`, quoted: lol})
                     break
                 case 'ytmp42':
 		if (!isRegistered) return reply(ind.noregis())
@@ -728,9 +728,9 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     get_result = get_result.result
                     ini_txt = `${get_result.title} - ${get_result.size}`
                     ini_buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     get_audio = await getBuffer(get_result.link)
-                    lolhuman.sendMessage(from, get_audio, video, { mimetype: 'video/mp4', filename: `${get_result.title}.mp4`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, video, { mimetype: 'video/mp4', filename: `${get_result.title}.mp4`, quoted: lol})
                     break
                 case 'telesticker':
 		if (!isRegistered) return reply(ind.noregis())
@@ -741,7 +741,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_sticker = ini_url.result.sticker
                     for (sticker_ in ini_sticker) {
                         ini_buffer = await getBuffer(ini_sticker[sticker_])
-                        lolhuman.sendMessage(from, ini_buffer, sticker)
+                        lolteam.sendMessage(from, ini_buffer, sticker)
                     }
                     break
 		case 'donate':
@@ -762,7 +762,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                             }
                         }
                     }
-                    lolhuman.sendMessage(from, donate(pushname2), text, ini_csreplythum)
+                    lolteam.sendMessage(from, donate(pushname2), text, ini_csreplythum)
                     break
                 case 'tiktoknowm':
 		if (!isRegistered) return reply(ind.noregis())
@@ -772,7 +772,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_url = `http://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=${ini_url}`
                     get_result = await fetchJson(ini_url)
                     ini_buffer = await getBuffer(get_result.result.link)
-                    lolhuman.sendMessage(from, ini_buffer, video, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, video, { quoted: lol})
                     break
                 case 'tiktokmusic':
 		if (!isRegistered) return reply(ind.noregis())
@@ -780,7 +780,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_link = args[0]
                     get_audio = await getBuffer(`http://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
-                    lolhuman.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: lol})
                     break
                 case 'spotify':
 		if (!isRegistered) return reply(ind.noregis())
@@ -795,9 +795,9 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Popularity : ${get_result.popularity}\n`
                     ini_txt += `Preview : ${get_result.preview_url}\n`
                     thumbnail = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     get_audio = await getBuffer(get_result.link[3].link)
-                    lolhuman.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol})
                     break
                 case 'spotifysearch':
 			if (!isRegistered) return reply(ind.noregis())
@@ -829,9 +829,9 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Uploaded : ${get_result.info.date}\n`
                     ini_txt += `Lirik :\n ${get_result.lirik}\n`
                     thumbnail = await getBuffer(get_result.image)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     get_audio = await getBuffer(get_result.audio[0].link)
-                    lolhuman.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.info.song}.mp3`, quoted: lol})
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.info.song}.mp3`, quoted: lol})
                     break
                 case 'igdl':
 		if (!isRegistered) return reply(ind.noregis())
@@ -843,7 +843,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_type = image
                     if (ini_url.includes(".mp4")) ini_type = video
                     ini_buffer = await getBuffer(ini_url)
-                    lolhuman.sendMessage(from, ini_buffer, ini_type, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, ini_type, { quoted: lol})
                     break
                 case 'fbdl':
 		if (!isRegistered) return reply(ind.noregis())
@@ -853,7 +853,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/facebook?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result[0].link
                     ini_buffer = await getBuffer(ini_url)
-                    lolhuman.sendMessage(from, ini_buffer, video, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, video, { quoted: lol})
                     break
                 case 'zippyshare':
 		if (!isRegistered) return reply(ind.noregis())
@@ -875,7 +875,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/pinterest?apikey=${apikey}&query=${query}`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'pinterestdl':
 		if (!isRegistered) return reply(ind.noregis())
@@ -885,14 +885,14 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_url = await fetchJson(`http://api.lolhuman.xyz/api/pinterestdl?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result[0]
                     ini_buffer = await getBuffer(ini_url)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'pixiv':
 		if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Example: ${prefix + command} loli`)
                     query = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/pixiv?apikey=${apikey}&query=${query}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'pixivdl':
 		if (!isRegistered) return reply(ind.noregis())
@@ -900,7 +900,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} 63456028`)
                     query = args[0]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/pixivdl/${pixivid}?apikey=${apikey}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'xhamstersearch':
 		if (!isRegistered) return reply(ind.noregis())
@@ -938,7 +938,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         ini_txt += `${x.type} - ${x.link}\n\n`
                     }
                     thumbnail = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'xnxxsearch':
 		if (!isRegistered) return reply(ind.noregis())
@@ -979,7 +979,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         ini_txt += `${x.type} - ${x.link}\n\n`
                     }
                     thumbnail = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
 
                     // AniManga //
@@ -1001,7 +1001,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     }
                     ini_txt += `\nDescription : \n${get_result.description.replace(/__/g, "_")}`
                     thumbnail = await getBuffer(get_result.image.large)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'manga':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1032,7 +1032,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     }
                     ini_txt += `\nDescription : ${get_result.description}`
                     thumbnail = await getBuffer(get_result.coverImage.large)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'anime':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1065,14 +1065,14 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     }
                     ini_txt += `\nDescription : ${get_result.description}`
                     thumbnail = await getBuffer(get_result.coverImage.large)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'wait':
 		if (!isRegistered) return reply(ind.noregis())
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        const filePath = await lolhuman.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
+                        const filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
                         const form = new FormData();
                         const stats = fs.statSync(filePath);
                         const fileSizeInBytes = stats.size;
@@ -1095,7 +1095,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         ini_txt += `at : ${get_result.at}\n`
                         ini_txt += `Episode : ${get_result.episode}\n`
                         ini_txt += `Similarity : ${get_result.similarity}`
-                        lolhuman.sendMessage(from, ini_video, video, { quoted: lol, caption: ini_txt })
+                        lolteam.sendMessage(from, ini_video, video, { quoted: lol, caption: ini_txt })
                     } else {
                         reply(`Kirim gambar dengan caption ${prefix + command} atau tag gambar yang sudah dikirim`)
                     }
@@ -1126,7 +1126,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         }
                     }
                     ini_buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'kusonimesearch':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1154,7 +1154,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         }
                     }
                     ini_buffer = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'otakudesu':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1254,7 +1254,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${apikey}`)
                     get_result = get_result.result
                     ini_buffer = await getBuffer(get_result)
-                    lolhuman.sendMessage(from, ini_buffer, document, { quoted: lol, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
+                    lolteam.sendMessage(from, ini_buffer, document, { quoted: lol, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
                     break
                 case 'nhentaisearch':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1294,7 +1294,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         }
                     }
                     ini_buffer = await getBuffer(get_result.thumb)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'nekopoisearch':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1335,7 +1335,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Mana : ${get_result.attr.mana}\n`
                     ini_txt += `Mana regen : ${get_result.attr.mana_regen}\n`
                     ini_icon = await getBuffer(get_result.icon)
-                    lolhuman.sendMessage(from, ini_icon, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, ini_icon, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'wikipedia':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1461,7 +1461,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Kedalaman : ${get_result.kedalaman}\n`
                     ini_txt += `Koordinat : ${get_result.koordinat}`
                     get_buffer = await getBuffer(get_result.map)
-                    lolhuman.sendMessage(from, get_buffer, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, get_buffer, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'lirik':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1484,7 +1484,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Suhu : ${get_result.suhu}\n`
                     ini_txt += `Udara : ${get_result.udara}\n`
                     ini_txt += `Permukaan laut : ${get_result.permukaan_laut}\n`
-                    lolhuman.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: lol})
+                    lolteam.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: lol})
                     reply(ini_txt)
                     break
                 case 'covidindo':
@@ -1563,7 +1563,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        const filePath = await lolhuman.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
+                        const filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
                         const form = new FormData();
                         const stats = fs.statSync(filePath);
                         const fileSizeInBytes = stats.size;
@@ -1606,7 +1606,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Language : ${get_result.language}\n`
                     ini_txt += `Link Download : ${get_result.link_dl}`
                     thumbnail = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'drakorongoing':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1641,7 +1641,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Description : ${get_result.desc}\n\n`
                     ini_txt += `Story : \n${get_result.story}`
                     thumbnail = await getBuffer(get_result.photo)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
                 case 'wattpadsearch':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1677,7 +1677,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     ini_txt += `Desc : ${get_result.desc}\n`
                     ini_txt += `Story :\n${get_result.story}\n`
                     thumbnail = await getBuffer(get_result.thumbnail)
-                    lolhuman.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
                     break
 
                     // Random Text //
@@ -1707,8 +1707,8 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     break
                 case 'quotesimage':
 		if (!isRegistered) return reply(ind.noregis())
-		buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/random/quotesimage?apikey=KatoNiBoss`)
-		lolhuman.sendMessage(from, buffer, image, { quoted: lol})
+		buffer = await getBuffer(`http://lolteam.herokuapp.com/api/random/quotesimage?apikey=KatoNiBoss`)
+		lolteam.sendMessage(from, buffer, image, { quoted: lol})
 		break
                 case 'faktaunik':
                 case 'katabijak':
@@ -1730,7 +1730,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} loli`)
                     query = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/gimage?apikey=${apikey}&query=${query}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'gimage2':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1740,7 +1740,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     get_result = get_result.result
                     for (var x = 0; x <= 5; x++) {
                         var ini_buffer = await getBuffer(get_result[x])
-                        lolhuman.sendMessage(from, ini_buffer, image)
+                        lolteam.sendMessage(from, ini_buffer, image)
                     }
                     break
                 case 'konachan':
@@ -1748,7 +1748,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} azur_lane`)
                     query = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/konachan?apikey=${apikey}&query=${query}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'wallpapersearch':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1756,7 +1756,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} loli`)
                     query = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/wallpaper?apikey=${apikey}&query=${query}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'wallpapersearch2':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1765,7 +1765,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     query = args.join(" ")
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/wallpaper2?apikey=${apikey}&query=${query}`)
                     ini_buffer = await getBuffer(get_result.result)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'playstore':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1787,7 +1787,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'shopee':
 		if (!isRegistered) return reply(ind.noregis())
                 shopp = `${body.slice(8)}`
-                  anu = await fetchJson(`http://lolhuman.herokuapp.com/api/shopee?apikey=${apikey}&query=${shopp}`, {method: 'get'})
+                  anu = await fetchJson(`http://lolteam.herokuapp.com/api/shopee?apikey=${apikey}&query=${shopp}`, {method: 'get'})
                   shopee = '==========================\n'
                   for (let disho of anu.result){
                   shopee += `• Name: ${disho.name}\n• Terjual: ${disho.sold}\n• Stock: ${disho.stock}\n• Desk: ${disho.desc}\n• Lokasi: ${disho.shop_loc}\n• Link: ${disho.link_produk}\n• Gambar: ${disho.image_cover}\n==========================\n`
@@ -1818,7 +1818,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     get_result = get_result.result[0].stickers
                     for (var x of get_result) {
                         ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/convert/towebp?apikey=${apikey}&img=${x}`)
-                        lolhuman.sendMessage(from, ini_buffer, sticker)
+                        lolteam.sendMessage(from, ini_buffer, sticker)
                     }
                     break
 
@@ -1885,7 +1885,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'wancak':
 		if (!isRegistered) return reply(ind.noregis())
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/onecak?apikey=${apikey}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
 
                     // Creator
@@ -1894,7 +1894,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage)) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        filePath = await lolhuman.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
+                        filePath = await lolteam.downloadAndSaveMediaMessage(encmedia, filename = getRandom());
                         file_name = getRandom(".webp")
                         ini_txt = args.join(" ").split("|")
                         request({
@@ -1910,7 +1910,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                             fs.unlinkSync(filePath)
                             fs.writeFileSync(file_name, body, "binary")
                             ini_buff = fs.readFileSync(file_name)
-                            lolhuman.sendMessage(from, ini_buff, sticker, { quoted: lol})
+                            lolteam.sendMessage(from, ini_buff, sticker, { quoted: lol})
                             fs.unlinkSync(file_name)
                         });
                     } else {
@@ -1921,7 +1921,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		if (!isRegistered) return reply(ind.noregis())
                     if ((isMedia && !lol.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(lol).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        filePath = await lolhuman.downloadAndSaveMediaMessage(encmedia)
+                        filePath = await lolteam.downloadAndSaveMediaMessage(encmedia)
                         file_name = getRandom('.webp')
                         request({
                             url: `http://api.lolhuman.xyz/api/convert/towebp?apikey=${apikey}`,
@@ -1934,7 +1934,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                             fs.unlinkSync(filePath)
                             fs.writeFileSync(file_name, body, "binary")
                             ini_buff = fs.readFileSync(file_name)
-                            lolhuman.sendMessage(from, ini_buff, sticker, { quoted: lol})
+                            lolteam.sendMessage(from, ini_buff, sticker, { quoted: lol})
                             fs.unlinkSync(file_name)
                         });
                     } else {
@@ -1951,7 +1951,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     exec(`wget "${ini_buffer}" -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
                         fs.unlinkSync(ranp)
                         buff = fs.readFileSync(rano)
-                        lolhuman.sendMessage(from, buff, sticker, { quoted: lol})
+                        lolteam.sendMessage(from, buff, sticker, { quoted: lol})
                         fs.unlinkSync(rano)
                     })
                     break
@@ -1959,7 +1959,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		if (!isRegistered) return reply(ind.noregis())
                     ini_url = args[0]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/editor/${wasted}?apikey=${apikey}&img=${ini_url}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'semoji':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1971,14 +1971,14 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         emoji = encodeURI(emoji)
                     }
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/smoji/${emoji}?apikey=${apikey}`)
-                    lolhuman.sendMessage(from, ini_buffer, sticker, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, sticker, { quoted: lol})
                     break
                 case 'fakedonald':
 		if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/tweettrump?apikey=${apikey}&text=${ini_txt}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'faketoko':
 		if (!isRegistered) return reply(ind.noregis())
@@ -1995,35 +1995,35 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/${command}?apikey=${apikey}&text=${ini_txt}`)
-                    lolhuman.sendMessage(from, ini_buffer, sticker, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, sticker, { quoted: lol})
                     break
                     case 'attp':
 		if (!isRegistered) return reply(ind.noregis())
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} MrA43G`)
                     teks = args.join(" ")
-                    buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/attp?apikey=SoftApikey&text=${teks}`)
-                    lolhuman.sendMessage(from, buffer, sticker, { quoted: lol})
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/attp?apikey=SoftApikey&text=${teks}`)
+                    lolteam.sendMessage(from, buffer, sticker, { quoted: lol})
                     break
                     case 'qrcode':
 		if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} loli`)
                     query = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/qrcode?apikey=SoftApikey&text=${query}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                     case 'nulis':
 		if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} LoL Human`)
                     teks = args.join(" ")
-                    buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/nulis?apikey=SoftApikey&text=${teks}`)
-                    lolhuman.sendMessage(from, buffer, image, { quoted: lol})
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/nulis?apikey=SoftApikey&text=${teks}`)
+                    lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
                     case 'apikeycek':
 		if (!isRegistered) return reply(ind.noregis())
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
 		apiKey = args[0]
-                    get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/checkapikey?apikey=${apiKey}`)
+                    get_result = await fetchJson(`http://lolteam.herokuapp.com/api/checkapikey?apikey=${apiKey}`)
                     get_result = get_result.result
                         txt = `User : ${get_result.username}\n`
                         txt += `Req : ${get_result.requests}\n`
@@ -2038,8 +2038,8 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} LoL Human api.lolhuman.xyz`)
 		username = args[0]
 		comment = args[2]
-                    buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/ytcomment?apikey=SoftApikey&username=${username}&comment=${comment}&img=https://i.ibb.co/JdfQ73m/photo-2021-02-05-10-13-39.jpg`)
-                    lolhuman.sendMessage(from, buffer, image, { quoted: lol})
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/ytcomment?apikey=SoftApikey&username=${username}&comment=${comment}&img=https://i.ibb.co/JdfQ73m/photo-2021-02-05-10-13-39.jpg`)
+                    lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
                     case 'phkomen':
 		if (!isRegistered) return reply(ind.noregis())
@@ -2048,27 +2048,27 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		username = args[0]
 		comment = args[2]
                     buffer = await getBuffer(`http://api.lolhuman.xyz/api/phcomment?apikey=SoftApikey&img=https://i.ibb.co/JdfQ73m/photo-2021-02-05-10-13-39.jpg&text=${comment}&username=${username}`)
-                    lolhuman.sendMessage(from, buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
                     case 'amongus':
 		if (!isRegistered) return reply(ind.noregis())
                     if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} MrA43G`)
-                    buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/amongus?apikey=SoftApikey&text=${body.slice(9)}`)
-                    lolhuman.sendMessage(from, buffer, sticker, { quoted: lol})
+                    buffer = await getBuffer(`http://lolteam.herokuapp.com/api/amongus?apikey=SoftApikey&text=${body.slice(9)}`)
+                    lolteam.sendMessage(from, buffer, sticker, { quoted: lol})
                     break
                     case 'tolol': 
 			if (!isRegistered) return reply(ind.noregis())
 				if (args.length < 1) return reply('Teks nya mana ? titit ?')
 				gatauda = body.slice(6)
-				buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/toloserti?apikey=${apikey}&name=${gatauda}`, {method: 'get'})
-				lolhuman.sendMessage(from, buffer, image, {quoted: lol})
+				buffer = await getBuffer(`http://lolteam.herokuapp.com/api/toloserti?apikey=${apikey}&name=${gatauda}`, {method: 'get'})
+				lolteam.sendMessage(from, buffer, image, {quoted: lol})
 				break
 				case 'emojitoimg': 
 				if (!isRegistered) return reply(ind.noregis())
 				if (args.length < 1) return reply('Contoh: 😭')
 				gatauda = body.slice(6)
 				buffer = await getBuffer(`http://api.lolhuman.xyz/api/smoji/${gatauda}?apikey=SoftApikey`, {method: 'get'})
-				lolhuman.sendMessage(from, buffer, image, {quoted: lol})
+				lolteam.sendMessage(from, buffer, image, {quoted: lol})
 				break
 				case 'quotemaker':
 			if (!isRegistered) return reply(ind.noregis())
@@ -2079,7 +2079,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     text = args[0]
                     author = args[1]
                     buffer = await getBuffer(`http://api.lolhuman.xyz/api/quotemaker2?apikey=${apikey}&text=${text}&author=${author}`)
-                    lolhuman.sendMessage(from, buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
 				case 'ktpmaker':
 		if (!isRegistered) return reply(ind.noregis())
@@ -2103,7 +2103,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     until = get_args[14]
                     img = get_args[15]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/ktpmaker?apikey=${apikey}&nik=${nik}&prov=${prov}&kabu=${kabu}&name=${name}&ttl=${ttl}&jk=${jk}&jl=${jl}&rtrw=${rtrw}&lurah=${lurah}&camat=${camat}&agama=${agama}&nikah=${nikah}&kerja=${kerja}&warga=${warga}&until=${until}&img=${img}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
 
                 case 'spamsms':
@@ -2138,7 +2138,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                 case 'wallnime':
 		if (!isRegistered) return reply(ind.noregis())
                     buffer = await getBuffer(`http://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}`)
-                    lolhuman.sendMessage(from, buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, buffer, image, { quoted: lol})
                     break
                 case 'chiisaihentai':
                 case 'trap':
@@ -2162,7 +2162,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		if (!isRegistered) return reply(ind.noregis())
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${apikey}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'bj':
                 case 'ero':
@@ -2209,7 +2209,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 		if (!isRegistered) return reply(ind.noregis())
 		if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${apikey}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'ngif':
                 case 'nsfw_neko_gif':
@@ -2222,7 +2222,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     exec(`wget ${ini_buffer} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
                         fs.unlinkSync(ranp)
                         buff = fs.readFileSync(rano)
-                        lolhuman.sendMessage(from, buff, sticker, { quoted: lol})
+                        lolteam.sendMessage(from, buff, sticker, { quoted: lol})
                         fs.unlinkSync(rano)
                     })
                     break
@@ -2264,7 +2264,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/textprome/${command}?apikey=${apikey}&text=${ini_txt}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'pornhub':
                 case 'glitch':
@@ -2285,7 +2285,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     txt1 = args[0]
                     txt2 = args[1]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/textprome2/${command}?apikey=${apikey}&text1=${txt1}&text2=${txt2}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
 
                     // Photo Oxy //
@@ -2317,7 +2317,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${apikey}&text=${ini_txt}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
                 case 'tiktok':
                 case 'arcade8bit':
@@ -2332,7 +2332,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     txt1 = args[0]
                     txt2 = args[1]
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/photooxy2/${command}?apikey=${apikey}&text1=${txt1}&text2=${txt2}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
 
                     // Ephoto 360 //
@@ -2370,12 +2370,12 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`http://api.lolhuman.xyz/api/ephoto1/${command}?apikey=${apikey}&text=${ini_txt}`)
-                    lolhuman.sendMessage(from, ini_buffer, image, { quoted: lol})
+                    lolteam.sendMessage(from, ini_buffer, image, { quoted: lol})
                     break
 			//Stalking
                    case 'igstalk':
 					if (!isRegistered) return reply(ind.noregis())
-					get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/stalkig/${body.slice(9)}?apikey=KatoNiBoss`, {method: 'get'})
+					get_result = await fetchJson(`http://lolteam.herokuapp.com/api/stalkig/${body.slice(9)}?apikey=KatoNiBoss`, {method: 'get'})
 					get_result = get_result.result
 					txt = `Link : https://www.instagram.com/${get_result.username}\n`
 					txt += `Full : ${get_result.fullname}\n`
@@ -2384,12 +2384,12 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					txt += `Following : ${get_result.following}\n`
 					txt += `Bio : ${get_result.bio}\n`
 					buffer = await getBuffer(get_result.photo_profile)
-					lolhuman.sendMessage(from, buffer, image, {quoted: lol, caption: txt})
+					lolteam.sendMessage(from, buffer, image, {quoted: lol, caption: txt})
 					break
 					case 'twtstalk':
 				if (!isRegistered) return reply(ind.noregis())
 				username = args[0]
-					get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/twitter/${username}?apikey=KatoNiBoss`, {method: 'get'})
+					get_result = await fetchJson(`http://lolteam.herokuapp.com/api/twitter/${username}?apikey=KatoNiBoss`, {method: 'get'})
 					get_result = get_result.result
 					txt = `Nama : ${get_result.name}\n`
 					txt += `Name Screen : ${get_result.screen_name}\n`
@@ -2401,12 +2401,12 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					txt += `Join : ${get_result.joined}\n`
 					profile = await getBuffer(get_result.profile_picture)
 					banner = await getBuffer(get_result.banner)
-					lolhuman.sendMessage(from, profile, image, {quoted: lol, caption: txt})
-					lolhuman.sendMessage(from, banner, image, {quoted: lol, caption: 'BANNERNYA OM!' })
+					lolteam.sendMessage(from, profile, image, {quoted: lol, caption: txt})
+					lolteam.sendMessage(from, banner, image, {quoted: lol, caption: 'BANNERNYA OM!' })
 					break
 		case 'githubstalk':
 					if (!isRegistered) return reply(ind.noregis())
-					get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/github/${body.slice(13)}?apikey=KatoNiBoss`, {method: 'get'})
+					get_result = await fetchJson(`http://lolteam.herokuapp.com/api/github/${body.slice(13)}?apikey=KatoNiBoss`, {method: 'get'})
 					get_result = get_result.result
 					txt = `Full : ${get_result.name}\n`
 					txt += `Followers : ${get_result.followers}\n`
@@ -2419,12 +2419,12 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					txt += `Email : ${get_result.email}\n`
 					txt += `Bio : ${get_result.bio}\n`
 					buffer = await getBuffer(get_result.avatar)
-					lolhuman.sendMessage(from, buffer, image, {quoted: lol, caption: txt})
+					lolteam.sendMessage(from, buffer, image, {quoted: lol, caption: txt})
 					break
 		case 'tkstalk':
 			if (!isRegistered) return reply(ind.noregis())
 			username = args[0]
-					get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/stalktiktok/${username}?apikey=${apikey}`, {method: 'get'})
+					get_result = await fetchJson(`http://lolteam.herokuapp.com/api/stalktiktok/${username}?apikey=${apikey}`, {method: 'get'})
 					get_result = get_result.result
 					txt = `Link : ${get_result.username}\n`
 					txt += `Bio : ${get_result.bio}\n`
@@ -2433,7 +2433,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					txt += `Likes : ${get_result.likes}\n`
 					txt += `Vidio : ${get_result.video}\n`
 					buffer = await getBuffer(get_result.user_picture)
-					lolhuman.sendMessage(from, buffer, image, {quoted: lol, caption: txt})
+					lolteam.sendMessage(from, buffer, image, {quoted: lol, caption: txt})
 					break
 		case 'ytstalk':
 					if (!isRegistered) return reply(ind.noregis())
@@ -2447,22 +2447,22 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					break
                    // Entertaiment 
 		case 'tebakbendera':
-					anu = await fetchJson(`http://lolhuman.herokuapp.com/api/tebak/bendera?apikey=${apikey}`, {method: 'get'})
+					anu = await fetchJson(`http://lolteam.herokuapp.com/api/tebak/bendera?apikey=${apikey}`, {method: 'get'})
 					tebakbender = `*bendera apa ini?*\n${anu.result.flag}`
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '*➸ Jawaban :* '+anu.result.name, text, {quoted: lol}) // ur cods
+					lolteam.sendMessage(from, '*➸ Jawaban :* '+anu.result.name, text, {quoted: lol}) // ur cods
 					}, 30000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
+					lolteam.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
 					}, 20000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
 					}, 10000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
 					}, 2500) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, tebakbender, text, {quoted: lol}) // ur cods
+					lolteam.sendMessage(from, tebakbender, text, {quoted: lol}) // ur cods
 					}, 0) // 1000 = 1s,
 					break 
                 case 'tebakgambar':
@@ -2470,19 +2470,19 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/gambar?apikey=${apikey}`, {method: 'get'})
 					bufferkkk = await getBuffer(anu.result.image)
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '*➸ Jawaban :* '+anu.result.answer, text, {quoted: lol}) // ur cods
+					lolteam.sendMessage(from, '*➸ Jawaban :* '+anu.result.answer, text, {quoted: lol}) // ur cods
 					}, 30000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
+					lolteam.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
 					}, 20000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
 					}, 10000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
 					}, 2500) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, bufferkkk, image, { caption: '_Jelaskan Apa Maksud Gambar Ini_', quoted: lol}) // ur cods
+					lolteam.sendMessage(from, bufferkkk, image, { caption: '_Jelaskan Apa Maksud Gambar Ini_', quoted: lol}) // ur cods
 					}, 0) // 1000 = 1s,
 					break  
 				case 'family100':
@@ -2490,19 +2490,19 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/family100?apikey=${apikey}`, {method: 'get'})
 					family = `*${anu.result.question}*`
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '*➸ Jawaban :* '+anu.result.aswer, text, {quoted: lol}) // ur cods
+					lolteam.sendMessage(from, '*➸ Jawaban :* '+anu.result.aswer, text, {quoted: lol}) // ur cods
 					}, 30000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
+					lolteam.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
 					}, 20000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
 					}, 10000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
 					}, 2500) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, family, text, {quoted: lol}) // ur cods
+					lolteam.sendMessage(from, family, text, {quoted: lol}) // ur cods
 					}, 0) // 1000 = 1s,
 					break
 					case 'caklontong':
@@ -2510,19 +2510,19 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 					anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/caklontong?apikey=${apikey}`, {method: 'get'})
 					caklontong = `*${anu.result.question}*`
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '*➸ Jawaban :* '+anu.result.answer, text, {quoted: lol}) // ur cods
+					lolteam.sendMessage(from, '*➸ Jawaban :* '+anu.result.answer, text, {quoted: lol}) // ur cods
 					}, 30000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
+					lolteam.sendMessage(from, '_10 Detik lagi…_', text) // ur cods
 					}, 20000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_20 Detik lagi_…', text) // ur cods
 					}, 10000) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
+					lolteam.sendMessage(from, '_30 Detik lagi_…', text) // ur cods
 					}, 2500) // 1000 = 1s,
 					setTimeout( () => {
-					lolhuman.sendMessage(from, caklontong, text, {quoted: lol}) // ur cods
+					lolteam.sendMessage(from, caklontong, text, {quoted: lol}) // ur cods
 					}, 0) // 1000 = 1s,
 					break 
 					case 'asupan':
@@ -2530,28 +2530,28 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
 			if (!isPrem) return reply('AND BUKAN USER PREM JIKA MAU JADI PREM KETIK cowner')
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/asupan?apikey=${apikey}`)
                     buffer = await getBuffer(get_result.result)
-                    lolhuman.sendMessage(from, buffer, video, { quoted: lol, mimetype: Mimetype.mp4, filename: "asupan.mp4" })
+                    lolteam.sendMessage(from, buffer, video, { quoted: lol, mimetype: Mimetype.mp4, filename: "asupan.mp4" })
                     break
 					case 'meme': 
 				if (!isRegistered) return reply(ind.noregis())
-				buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/random/meme?apikey=${apikey}`, {method: 'get'})
-				lolhuman.sendMessage(from, buffer, image, {quoted: lol})
+				buffer = await getBuffer(`http://lolteam.herokuapp.com/api/random/meme?apikey=${apikey}`, {method: 'get'})
+				lolteam.sendMessage(from, buffer, image, {quoted: lol})
 				break
 				case 'memeindo': 
 				if (!isRegistered) return reply(ind.noregis())
 				buffer = await getBuffer(`http://api.lolhuman.xyz/api/meme/memeindo?apikey=${apikey}`, {method: 'get'})
-				lolhuman.sendMessage(from, buffer, image, {quoted: lol})
+				lolteam.sendMessage(from, buffer, image, {quoted: lol})
 				break
 				case 'darkjoke': 
 				if (!isRegistered) return reply(ind.noregis())
-				buffer = await getBuffer(`http://lolhuman.herokuapp.com/api/meme/darkjoke?apikey=KatoNiBoss`, {method: 'get'})
-				lolhuman.sendMessage(from, buffer, image, {quoted: lol, caption: 'FIX BUG BY RIU'})
+				buffer = await getBuffer(`http://lolteam.herokuapp.com/api/meme/darkjoke?apikey=KatoNiBoss`, {method: 'get'})
+				lolteam.sendMessage(from, buffer, image, {quoted: lol, caption: 'FIX BUG BY RIU'})
 				break
 				case 'namaninja': 
 				if (!isRegistered) return reply(ind.noregis())
 				if (args.length < 1) return reply(`Contoh: Riu Ganteng`)
 					gatauda = body.slice(11)
-					anu = await fetchJson(`http://lolhuman.herokuapp.com/api/ninja?apikey=${apikey}&nama=${gatauda}`)
+					anu = await fetchJson(`http://lolteam.herokuapp.com/api/ninja?apikey=${apikey}&nama=${gatauda}`)
 					reply(anu.result)
 					break
 					case 'alay': 
@@ -2590,7 +2590,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
                         reply(`Maaf Kak, command *${prefix}${command}* gk ada di list *${prefix}help*`)
                     }
                     if (!isGroup && !isCmd) {
-                        await lolhuman.updatePresence(from, Presence.composing)
+                        await lolteam.updatePresence(from, Presence.composing)
                         simi = await fetchJson(`http://api.lolhuman.xyz/api/simi?apikey=${apikey}&text=${budy}`)
                         reply(simi.result)
                     }
