@@ -58,27 +58,23 @@ This project require NodeJS v12
 Clone this project
 
 ```bash
-> git clone https://github.com/AkiRaID/selfbot-lolhuman.git
-> cd selfbot-lolhuman
+$ git clone https://github.com/AkiRaID/selfbot-lolhuman.git
+$ cd selfbot-lolhuman
 ```
 
 Install the dependencies:
 
 ```bash
-$ pkg install wget
-$ pkg install ffmpeg
 $ pkg install nodejs
-$ pkg update 
-$ pkg upgrade 
 $ pkg install imagemagick
-$ pkg install git
+$ bash install.sh
 ```
 
 ### Usage
 Run the Whatsapp bot
 
 ```bash
-> node index.js
+$ node index.js
 ```
 
 Scan Qrnya,dan Selamat Menikmati Bot Wanya😁
