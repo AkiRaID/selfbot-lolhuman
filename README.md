@@ -8,11 +8,11 @@
 <a href="https://github.com/AkiRaID"><img title="Author" src="https://img.shields.io/badge/AUTHOR-AKIRA-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://github.com/AkiRaID/followers"><img title="Followers" src="https://img.shields.io/github/followers/AkiRa?color=blue&style=flat-square"></a>
-<a href="https://github.com/AkiRaID/selfbot-lolhuman/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/AkiRa/selfbot-lolhuman?color=red&style=flat-square"></a>
-<a href="https://github.com/AkiRaID/selfbot-lolhuman/network/members"><img title="Forks" src="https://img.shields.io/github/forks/AkiRa/selfbot-lolhuman?color=red&style=flat-square"></a>
-<a href="https://github.com/AkiRaID/selfbot-lolhuman/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/AkiRa/selfbot-lolhuman?label=Watchers&color=blue&style=flat-square"></a>
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAkiRa%2Fselfbot-lolhuman&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
+<a href="https://github.com/AkiRaID/followers"><img title="Followers" src="https://img.shields.io/github/followers/AkiRaID?color=blue&style=flat-square"></a>
+<a href="https://github.com/AkiRaID/selfbot-lolhuman/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/AkiRaID/selfbot-lolhuman?color=red&style=flat-square"></a>
+<a href="https://github.com/AkiRaID/selfbot-lolhuman/network/members"><img title="Forks" src="https://img.shields.io/github/forks/AkiRaID/selfbot-lolhuman?color=red&style=flat-square"></a>
+<a href="https://github.com/AkiRaID/selfbot-lolhuman/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/AkiRaID/selfbot-lolhuman?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAkiRaID%2Fselfbot-lolhuman&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
 </p>
 
 <p align="center">
