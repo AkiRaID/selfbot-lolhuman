@@ -38,8 +38,8 @@ const vcard = 'BEGIN:VCARD\n'  // Jan diubah,Ntar Error
 //Setingan
 apikey = 'AkiraYT' 
 prefix = 'x' 
-owner = '6282158549899' 
-cr = 'Selfbot Lol-Human By Akira'
+owner = '6282130301023' 
+cr = 'Self-Bot LolHuman'
 //Premium
 const premium = JSON.parse(fs.readFileSync('./database/user/premium.json'))
 
@@ -162,7 +162,7 @@ sᴇᴍᴏɢᴀ ᴊᴀsᴀᴅᴍᴜ ʙᴀɪᴋ ʙᴀɪᴋ sᴀᴊᴀ ᴅᴀɴ s�
             if (lol.key && lol.key.remoteJid == 'status@broadcast') return
             if (lol.key.fromMe) return
             global.prefix
-	    const ownerNumber = ["6282158549899@s.whatsapp.net"] // owner number ubah aja
+	    const ownerNumber = ["6282130301023@s.whatsapp.net"] // owner number ubah aja
             const content = JSON.stringify(lol.message)
             const from = lol.key.remoteJid
             const type = Object.keys(lol.message)[0]
